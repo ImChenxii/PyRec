@@ -1,6 +1,5 @@
 import tensorflow as tf
 import pandas as pd
-from tqdm import tqdm_notebook as tqdm
 import numpy as np
 
 train_data = pd.read_csv("./")
@@ -11,7 +10,7 @@ test_y = pd.read_csv('./')
 # m:训练集大小
 # n:维度大小
 m, n = train_data.shape
-# k:FM的辅助矩阵大小
+# k: FM的嵌入矩阵大小
 k = 10
 
 x = tf.placeholder('float', [None, n])
@@ -82,7 +81,7 @@ def batcher(X_, y_=None, batch_size=-1):
 with tf.Session() as sess:
     sess.run(init)
 
-    for epoch in tqdm(range(epochs), unit='epoch'):
+    for epoch in range(epochs):
         perm = np.random.permutation(train_data.shape[0])
 
         for bX, bY in batcher(train_data[perm], train_y[perm], batch_size):
