@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee1821e1-85b6-49be-8b8a-fd3e819662f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Utils/Data4Train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/FM/FM2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PyRec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyRec.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/FM/FM.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/FM/FM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Data4Train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Data4PyRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/FM/FM.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/FM.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,25 +28,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="10" />
+          <entry key="md" value="1" />
+          <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="10" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="1" />
-          <entry key="py" value="4418" />
-          <entry key="txt" value="9" />
+          <entry key="dummy" value="6" />
+          <entry key="py" value="7273" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="4418" />
+          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="Python" value="7273" />
         </counts>
       </usages-collector>
     </session>
@@ -58,51 +58,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/FM/FM2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/FM/FM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="100" selection-start-line="100" selection-end-line="100" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1568083644000" expanded="true" signature="144:149" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Utils/Data4Train.py">
+        <entry file="file://$PROJECT_DIR$/models/FM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="95">
+              <caret line="5" column="226" selection-start-line="5" selection-start-column="226" selection-end-line="5" selection-end-column="226" />
               <folding>
-                <element signature="e#1#12#0" expanded="true" />
-                <marker date="1568097874000" expanded="true" signature="73:78" ph="..." />
-                <marker date="1568097874000" expanded="true" signature="755:764" ph="..." />
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1568107258000" expanded="true" signature="169:174" ph="..." />
+                <marker date="1568107258000" expanded="true" signature="1192:1268" ph="..." />
+                <marker date="1568107258000" expanded="true" signature="4866:5075" ph="..." />
+                <marker date="1568107258000" expanded="true" signature="5906:6316" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/DeepFM/DeepFM.py">
+        <entry file="file://$PROJECT_DIR$/Utils/Data4PyRec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
+            <state relative-caret-position="551">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1568105382000" expanded="true" signature="73:78" ph="..." />
+                <marker date="1568105382000" expanded="true" signature="1091:1100" ph="..." />
               </folding>
             </state>
           </provider>
@@ -138,9 +118,14 @@
         <option value="$PROJECT_DIR$/models/PNN/PNN.py" />
         <option value="$PROJECT_DIR$/models/NFM/NFM.py" />
         <option value="$PROJECT_DIR$/Utils/train_utils.py" />
-        <option value="$PROJECT_DIR$/models/FM/FM.py" />
         <option value="$PROJECT_DIR$/Utils/tmp.py" />
         <option value="$PROJECT_DIR$/Utils/Data4Train.py" />
+        <option value="$PROJECT_DIR$/Utils/__init__.py" />
+        <option value="$PROJECT_DIR$/models/FM/FM.py" />
+        <option value="$PROJECT_DIR$/models/Utils/__init__.py" />
+        <option value="$PROJECT_DIR$/models/FM/FM2.py" />
+        <option value="$PROJECT_DIR$/Utils/Data4PyRec.py" />
+        <option value="$PROJECT_DIR$/models/FM.py" />
       </list>
     </option>
   </component>
@@ -175,6 +160,11 @@
             <path>
               <item name="PyRec" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyRec" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyRec" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyRec" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -193,6 +183,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/models" />
       <recent name="C:\Machine Learning\RecommandSystem\PyRec\models\FFM" />
       <recent name="C:\Machine Learning\RecommandSystem\PyRec\models\FM" />
     </key>
@@ -269,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567589111885</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit FM first step">
+      <created>1568097895305</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568097895305</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -277,8 +276,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1037196" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14806867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -309,7 +309,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit FM" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit FM" />
+    <MESSAGE value="commit FM first step" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit FM first step" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PyRec$ffm.coverage" NAME="ffm Coverage Results" MODIFIED="1558850410492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
@@ -340,45 +341,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/FFM/FFM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utils/train_utils.py" />
-    <entry file="file://$PROJECT_DIR$/models/FM/FM2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/FM/FM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1568083644000" expanded="true" signature="144:149" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/DeepFM/DeepFM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utils/tmp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -386,13 +349,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/Data4Train.py">
+    <entry file="file://$PROJECT_DIR$/models/DeepFM/DeepFM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="395">
+          <caret line="243" column="21" lean-forward="true" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
           <folding>
-            <element signature="e#1#12#0" expanded="true" />
-            <marker date="1568097874000" expanded="true" signature="73:78" ph="..." />
-            <marker date="1568097874000" expanded="true" signature="755:764" ph="..." />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/FFM/FFM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-899">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/FM/FM2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/Data4PyRec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1568105382000" expanded="true" signature="73:78" ph="..." />
+            <marker date="1568105382000" expanded="true" signature="1091:1100" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/FM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="226" selection-start-line="5" selection-start-column="226" selection-end-line="5" selection-end-column="226" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1568107258000" expanded="true" signature="169:174" ph="..." />
+            <marker date="1568107258000" expanded="true" signature="1192:1268" ph="..." />
+            <marker date="1568107258000" expanded="true" signature="4866:5075" ph="..." />
+            <marker date="1568107258000" expanded="true" signature="5906:6316" ph="..." />
           </folding>
         </state>
       </provider>
