@@ -1,5 +1,14 @@
+'''
+@author: chenxi
+@file: FFM.py
+@time: 2019/9/10 19:07
+@desc: Factorization Machine
+'''
 import tensorflow as tf
 from Utils.Data4PyRec import Data4PyRec
+from Utils.optimizer_select import optimizer_select
+from Utils.loss_select import loss_select
+from Utils.metric_select import metric_select
 from sklearn.metrics import roc_auc_score, log_loss, mean_squared_error, mean_absolute_error
 
 class FM():
@@ -9,14 +18,14 @@ class FM():
         self.label = label
         self.feature_num = data.shape[1] # 特征个数
 
-        # 算法的超参数
+        # 算法特性参数
         self.embedding_size = embedding_size # 嵌入矩阵V的大小
+
+        # 训练参数
         self.lr_reg_l1 = lr_reg_l1 # LR部分L1正则化系数
         self.lr_reg_l2 = lr_reg_l2 # LR部分L2正则化系数
         self.fm_reg_l1 = fm_reg_l1 # FM部分L1正则化系数
         self.fm_reg_l2 = fm_reg_l2 # FM部分L2正则化系数
-
-        # 训练参数
         self.loss = loss # 损失函数类型
         self.metric = metric # 评价函数类型
         self.opt = opt # 优化器类型
@@ -28,9 +37,12 @@ class FM():
         # 其他参数
         self.random_seed = random_seed # 随机数种子大小
 
+        # 初始化计算图
+        self.init_graph()
+
     def __del__(self):
         print("FM task over")
-        self.sess.close() # 停止会话,防止内存泄露
+        self.sess.close() # 对象销毁时,中止会话,防止内存泄露
 
     def init_graph(self):
         '''
@@ -60,16 +72,8 @@ class FM():
             # part3: 合并LR和交叉项的输出
             self.output = tf.add(self.lr_part, self.fm_cross_part) # 维度为: m*1
 
-
             # 定义目标损失
-            self.obj_loss = tf.losses.log_loss(self.Y, tf.nn.sigmoid(self.output)) # 默认使用对数损失函数
-            if self.loss == "auc":
-                self.obj_loss = tf.metrics.auc(self.Y, tf.nn.sigmoid(self.output)) # AUC
-            elif self.loss == "mse":
-                self.obj_loss = tf.losses.mean_squared_error(self.Y, tf.nn.sigmoid(self.output)) # 均方损失函数
-            elif self.loss == "mae":
-                self.obj_loss = tf.losses.absolute_difference(self.Y, tf.nn.sigmoid(self.output)) # 绝对损失函数
-
+            self.obj_loss = loss_select.select(self.loss, self.Y, tf.nn.sigmoid(self.output))
 
             # 定义正则化损失
             self.lr_l1 = tf.constant(self.lr_reg_l1, name="lr_l1")
@@ -81,17 +85,11 @@ class FM():
             self.l2_norm = tf.reduce_sum(tf.add(tf.multiply(self.lr_l2, tf.pow(self.w, 2)), tf.multiply(self.fm_l2, tf.pow(self.V, 2)))) # L2正则化损失函数
             self.norm_loss = tf.add(self.l1_norm, self.l2_norm) # 合并正则化损失
 
-            loss = tf.add(self.obj_loss, self.norm_loss)
+            # 合并得到总的损失函数
+            self.loss_fun = tf.add(self.obj_loss, self.norm_loss)
 
             # 选择优化器
-            if self.opt == "GD": # 梯度下降优化器
-                self.optimizer = tf.train.GradientDescentOptimizer(learning_rate=self.learning_rate).minimize(loss)
-            elif self.opt == "Adam": # Adam优化器
-                self.optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate, beta1=0.9, beta2=0.999, epsilon=1e-8).minimize(loss)
-            elif self.opt == "AdaGrad": # AdaGrad优化器
-                self.optimizer = tf.train.AdagradOptimizer(learning_rate=self.learning_rate, initial_accumulator_value=1e-8).minimize(loss)
-            elif self.opt == "Mometum": # 动量下降优化器
-                self.optimizer = tf.train.MomentumOptimizer(learning_rate=self.learning_rate, momentum=0.95).minimize(loss)
+            self.optimizer = optimizer_select.select(self.opt, self.learning_rate).minimize(self.loss_fun)
 
             # 初始化
             self.saver = tf.train.Saver() # 模型保存器
@@ -129,14 +127,7 @@ class FM():
     # 使用指定的评价函数进行评估,评价函数可以和之前的目标函数不相同
     def evaluate(self, eva_X, eva_Y):
         pred = self.predict(eva_X, eva_Y)
-        # 默认是logloss
-        metric_fun = log_loss
-        if self.metric == "auc": # roc_auc
-            metric_fun = roc_auc_score
-        elif self.metric == "mae": # mae
-            metric_fun = mean_absolute_error
-        elif self.metric == "mse": # mse
-            metric_fun = mean_squared_error
+        metric_fun = metric_select.select(self.metric)
 
         return metric_fun(eva_Y, pred)
 
