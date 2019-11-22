@@ -7,9 +7,7 @@
 
 import tensorflow as tf
 from Utils.Data4PyRec import Data4PyRec
-from Utils.loss_select import loss_select
-from Utils.optimizer_select import optimizer_select
-from Utils.metric_select import metric_select
+from tensorflow.losses import logloss
 
 class FFM():
     def __init__(self, data, label, feature_field, embedding_size=8, lr_reg_l1=0, lr_reg_l2=0, fm_reg_l1=0, fm_reg_l2=0, loss="logloss", metric="logloss", opt="adam", learning_rate=0.1, epochs=10, batch_size=256, verbos=1, random_seed=2018):
@@ -28,9 +26,6 @@ class FFM():
         self.lr_reg_l2 = lr_reg_l2  # LR部分L2正则化系数
         self.fm_reg_l1 = fm_reg_l1  # FM部分L1正则化系数
         self.fm_reg_l2 = fm_reg_l2  # FM部分L2正则化系数
-        self.loss = loss  # 损失函数类型
-        self.metric = metric  # 评价函数类型
-        self.opt = opt  # 优化器类型
         self.learning_rate = learning_rate  # 学习率大小
         self.epochs = epochs  # 训练迭代次数
         self.batch_size = batch_size  # 一个batch数据大小
@@ -98,7 +93,7 @@ class FFM():
             self.output = tf.add(self.lr_output, self.ffm_output)
 
             # 定义目标损失
-            self.obj_loss = loss_select.select(self.loss, self.Y, tf.nn.sigmoid(self.output))
+            self.obj_loss = logloss(self.Y, tf.nn.sigmoid(self.output))
 
             # 定义正则化损失
             self.lr_l1 = tf.constant(self.lr_reg_l1, name="lr_l1")
@@ -114,7 +109,7 @@ class FFM():
             self.loss_fun = tf.add(self.obj_loss, self.norm_loss)
 
             # 选择优化器
-            self.optimizer = optimizer_select.select(self.opt, self.learning_rate).minimize(self.loss_fun)
+            self.optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate).minimize(self.loss_fun)
 
             # 初始化
             self.saver = tf.train.Saver()  # 模型保存器
