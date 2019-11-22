@@ -6,13 +6,11 @@
 '''
 import tensorflow as tf
 from Utils.Data4PyRec import Data4PyRec
-from Utils.optimizer_select import optimizer_select
-from Utils.loss_select import loss_select
-from Utils.metric_select import metric_select
+from tensorflow.losses import log_loss
 from sklearn.metrics import roc_auc_score, log_loss, mean_squared_error, mean_absolute_error
 
 class FM():
-    def __init__(self, data, label, embedding_size=8, lr_reg_l1=0, lr_reg_l2=0, fm_reg_l1=0, fm_reg_l2=0, loss="logloss", metric="logloss", opt="Adam", learning_rate=0.1, epochs=10, batch_size=256, verbos=1, random_seed=2018):
+    def __init__(self, data, label, embedding_size=8, lr_reg_l1=0, lr_reg_l2=0, fm_reg_l1=0, fm_reg_l2=0, learning_rate=0.1, epochs=10, batch_size=256, verbos=1, random_seed=2018):
         # 数据参数
         self.data = data
         self.label = label
@@ -26,9 +24,8 @@ class FM():
         self.lr_reg_l2 = lr_reg_l2 # LR部分L2正则化系数
         self.fm_reg_l1 = fm_reg_l1 # FM部分L1正则化系数
         self.fm_reg_l2 = fm_reg_l2 # FM部分L2正则化系数
-        self.loss = loss # 损失函数类型
-        self.metric = metric # 评价函数类型
-        self.opt = opt # 优化器类型
+
+
         self.learning_rate = learning_rate # 学习率大小
         self.epochs = epochs # 训练迭代次数
         self.batch_size = batch_size # 一个batch数据大小
@@ -73,7 +70,7 @@ class FM():
             self.output = tf.add(self.lr_part, self.fm_cross_part) # 维度为: m*1
 
             # 定义目标损失
-            self.obj_loss = loss_select.select(self.loss, self.Y, tf.nn.sigmoid(self.output))
+            self.obj_loss = log_loss(self.Y, tf.nn.sigmoid(self.output))
 
             # 定义正则化损失
             self.lr_l1 = tf.constant(self.lr_reg_l1, name="lr_l1")
@@ -88,8 +85,8 @@ class FM():
             # 合并得到总的损失函数
             self.loss_fun = tf.add(self.obj_loss, self.norm_loss)
 
-            # 选择优化器
-            self.optimizer = optimizer_select.select(self.opt, self.learning_rate).minimize(self.loss_fun)
+            # 设置优化器最小化损失函数
+            self.optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate, beta1=0.9, beta2=0.999, epsilon=1e-8).minimize(self.loss_fun)
 
             # 初始化
             self.saver = tf.train.Saver() # 模型保存器
@@ -127,9 +124,9 @@ class FM():
     # 使用指定的评价函数进行评估,评价函数可以和之前的目标函数不相同
     def evaluate(self, eva_X, eva_Y):
         pred = self.predict(eva_X, eva_Y)
-        metric_fun = metric_select.select(self.metric)
+        metric = log_loss(eva_Y, pred)
 
-        return metric_fun(eva_Y, pred)
+        return metric
 
     # 对指定的数据集进行预测
     def predict(self, pre_X, pre_Y):
