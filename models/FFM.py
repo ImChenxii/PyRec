@@ -14,9 +14,9 @@ from Utils.metric_select import metric_select
 class FFM():
     def __init__(self, data, label, feature_field, embedding_size=8, lr_reg_l1=0, lr_reg_l2=0, fm_reg_l1=0, fm_reg_l2=0, loss="logloss", metric="logloss", opt="adam", learning_rate=0.1, epochs=10, batch_size=256, verbos=1, random_seed=2018):
         # 数据参数
-        self.data = data
-        self.label = label
-        self.feature_num = data.shape[1]
+        self.data = data # 训练特征集
+        self.label = label # 训练标签集
+        self.feature_num = data.shape[1] # 特征的个数
         self.feature_field = feature_field # feature_field是一个每个feature所属的field列表
         self.field_num = len(set(feature_field)) # 特征所属的field数量
 
@@ -146,7 +146,7 @@ class FFM():
                 cur_loss = self.train_in_one_batch(batch_data, batch_label)
                 # 打印
                 if self.verbos > 0:
-                    if (pyRecData.get_seq() % self.verbos == 0):
+                    if (pyRecData.get_idx() % self.verbos == 0):
                         print("current " + str(self.loss) + " is : " + str(cur_loss) + "!")
             pyRecData.reset()
 
@@ -170,7 +170,7 @@ class FFM():
             predict_part = self.sess.run(self.output, feed_dict=feed_dict)
             # 对每个batch的预测结果进行合并
             predict = None
-            if pyRecData_for_pre.get_seq() == 1:
+            if pyRecData_for_pre.get_idx() == 1:
                 predict = predict_part
             else:
                 predict = tf.concat(0, [predict, predict_part])

@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ee1821e1-85b6-49be-8b8a-fd3e819662f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Data4Train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Data4PyRec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/FM/FM.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/FM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Data4PyRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Data4PyRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/FFM.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/FFM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/FFM/FFM.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/FM.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/FM.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,36 +21,38 @@
     <session id="355407428">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="py" value="23" />
+          <entry key="py" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="23" />
+          <entry key="Python" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="py" value="7273" />
-          <entry key="txt" value="21" />
+          <entry key="py" value="11971" />
+          <entry key="txt" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="27" />
-          <entry key="Python" value="7273" />
+          <entry key="PLAIN_TEXT" value="69" />
+          <entry key="Python" value="11971" />
         </counts>
       </usages-collector>
     </session>
@@ -61,14 +65,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/FM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="226" selection-start-line="5" selection-start-column="226" selection-end-line="5" selection-end-column="226" />
+            <state relative-caret-position="-2139">
+              <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1568107258000" expanded="true" signature="169:174" ph="..." />
-                <marker date="1568107258000" expanded="true" signature="1192:1268" ph="..." />
-                <marker date="1568107258000" expanded="true" signature="4866:5075" ph="..." />
-                <marker date="1568107258000" expanded="true" signature="5906:6316" ph="..." />
+                <element signature="e#90#113#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,13 +77,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils/Data4PyRec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state relative-caret-position="19">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1568105382000" expanded="true" signature="73:78" ph="..." />
-                <marker date="1568105382000" expanded="true" signature="1091:1100" ph="..." />
+                <marker date="1573472803389" expanded="true" signature="60:65" ph="..." />
+                <marker date="1573472803389" expanded="true" signature="1080:1089" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/FFM.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -103,6 +111,11 @@
       <find>label</find>
       <find>logloss</find>
       <find>sess.</find>
+      <find>dropout_keep_fm</find>
+      <find>glorot</find>
+      <find>loss</find>
+      <find>seq</find>
+      <find>get_seq</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,15 +130,21 @@
         <option value="$PROJECT_DIR$/models/DCN/DCN.py" />
         <option value="$PROJECT_DIR$/models/PNN/PNN.py" />
         <option value="$PROJECT_DIR$/models/NFM/NFM.py" />
-        <option value="$PROJECT_DIR$/Utils/train_utils.py" />
         <option value="$PROJECT_DIR$/Utils/tmp.py" />
         <option value="$PROJECT_DIR$/Utils/Data4Train.py" />
         <option value="$PROJECT_DIR$/Utils/__init__.py" />
         <option value="$PROJECT_DIR$/models/FM/FM.py" />
         <option value="$PROJECT_DIR$/models/Utils/__init__.py" />
         <option value="$PROJECT_DIR$/models/FM/FM2.py" />
-        <option value="$PROJECT_DIR$/Utils/Data4PyRec.py" />
+        <option value="$PROJECT_DIR$/Utils/optimizer_select.py" />
+        <option value="$PROJECT_DIR$/Utils/loss_select.py" />
+        <option value="$PROJECT_DIR$/Utils/train_utils.py" />
+        <option value="$PROJECT_DIR$/Utils/metric_select.py" />
+        <option value="$PROJECT_DIR$/model/FM.py" />
         <option value="$PROJECT_DIR$/models/FM.py" />
+        <option value="$PROJECT_DIR$/models/FFM.py" />
+        <option value="$PROJECT_DIR$/models/DeepFM.py" />
+        <option value="$PROJECT_DIR$/Utils/Data4PyRec.py" />
       </list>
     </option>
   </component>
@@ -136,10 +155,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="4" />
-    <option name="y" value="23" />
-    <option name="width" value="1436" />
-    <option name="height" value="877" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -149,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,6 +187,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,7 +196,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -268,7 +285,35 @@
       <option name="project" value="LOCAL" />
       <updated>1568097895305</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add FM">
+      <created>1568107632890</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568107632890</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add some utils">
+      <created>1568170286095</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568170286095</updated>
+    </task>
+    <task id="LOCAL-00005" summary="modify fm">
+      <created>1568170327991</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568170327991</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add ffm">
+      <created>1568170349319</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568170349319</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -278,7 +323,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14806867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16309012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -292,13 +337,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32961586" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32961586" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Translate" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +356,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit FM" />
     <MESSAGE value="commit FM first step" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit FM first step" />
+    <MESSAGE value="Add FM" />
+    <MESSAGE value="add some utils" />
+    <MESSAGE value="modify fm" />
+    <MESSAGE value="add ffm" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ffm" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PyRec$ffm.coverage" NAME="ffm Coverage Results" MODIFIED="1558850410492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
@@ -341,38 +391,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/train_utils.py" />
-    <entry file="file://$PROJECT_DIR$/Utils/tmp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/DeepFM/DeepFM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="243" column="21" lean-forward="true" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/FFM/FFM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-899">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/tmp.py" />
+    <entry file="file://$PROJECT_DIR$/models/__init__.py" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -384,38 +404,87 @@
     <entry file="file://$PROJECT_DIR$/Utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/FM/FM2.py">
+    <entry file="file://$PROJECT_DIR$/models/FM/FM2.py" />
+    <entry file="file://$PROJECT_DIR$/Utils/optimizer_select.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="171">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/loss_select.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/FFM/FFM.py" />
+    <entry file="file://$PROJECT_DIR$/Utils/train_utils.py" />
+    <entry file="file://$PROJECT_DIR$/Utils/metric_select.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/tensorflow/python/ops/variable_scope.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="1454" column="18" lean-forward="true" selection-start-line="1454" selection-start-column="18" selection-end-line="1454" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/DeepFM/DeepFM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-912">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/FM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/DeepFM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#72#95#0" expanded="true" />
+            <marker date="1573472024636" expanded="true" signature="269:274" ph="..." />
+            <marker date="1573472024636" expanded="true" signature="501:510" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/FFM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/Data4PyRec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1568105382000" expanded="true" signature="73:78" ph="..." />
-            <marker date="1568105382000" expanded="true" signature="1091:1100" ph="..." />
+            <marker date="1573472803389" expanded="true" signature="60:65" ph="..." />
+            <marker date="1573472803389" expanded="true" signature="1080:1089" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/FM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="226" selection-start-line="5" selection-start-column="226" selection-end-line="5" selection-end-column="226" />
+        <state relative-caret-position="-2139">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1568107258000" expanded="true" signature="169:174" ph="..." />
-            <marker date="1568107258000" expanded="true" signature="1192:1268" ph="..." />
-            <marker date="1568107258000" expanded="true" signature="4866:5075" ph="..." />
-            <marker date="1568107258000" expanded="true" signature="5906:6316" ph="..." />
+            <element signature="e#90#113#0" expanded="true" />
           </folding>
         </state>
       </provider>

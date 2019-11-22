@@ -12,7 +12,7 @@ from Utils.metric_select import metric_select
 from sklearn.metrics import roc_auc_score, log_loss, mean_squared_error, mean_absolute_error
 
 class FM():
-    def __init__(self, data, label, embedding_size=8, lr_reg_l1=0, lr_reg_l2=0, fm_reg_l1=0, fm_reg_l2=0, loss="logloss", metric="logloss", opt="adam", learning_rate=0.1, epochs=10, batch_size=256, verbos=1, random_seed=2018):
+    def __init__(self, data, label, embedding_size=8, lr_reg_l1=0, lr_reg_l2=0, fm_reg_l1=0, fm_reg_l2=0, loss="logloss", metric="logloss", opt="Adam", learning_rate=0.1, epochs=10, batch_size=256, verbos=1, random_seed=2018):
         # 数据参数
         self.data = data
         self.label = label
@@ -54,8 +54,8 @@ class FM():
         with self.graph.as_default():
             tf.set_random_seed(self.random_seed) # 设置随机种子大小
             # 设置输入输出
-            self.X = tf.placeholder('float', [None, self.feature_num], name='X') # 输入矩阵维度: m*n,m为数据量大小,n是特征个数
-            self.Y = tf.placeholder('float', [None, 1], name='Y') # 目标值维度: m*1
+            self.X = tf.placeholder('float', [None, self.feature_num], name='X') # 输入矩阵维度: m*n,m为batch_size大小,n是特征个数
+            self.Y = tf.placeholder('float', [None, 1], name='Y') # label维度: m*1
 
             # part1: 逻辑回归线性部分
             # 逻辑回归变量
@@ -120,7 +120,7 @@ class FM():
                 cur_loss = self.train_in_one_batch(batch_data, batch_label)
                 # 打印
                 if self.verbos > 0:
-                    if (pyRecData.get_seq() % self.verbos == 0):
+                    if (pyRecData.get_idx() % self.verbos == 0):
                         print("current " + str(self.loss) + " is : " + str(cur_loss) + "!")
             pyRecData.reset()
 
@@ -144,7 +144,7 @@ class FM():
             predict_part = self.sess.run(self.output, feed_dict=feed_dict)
             # 对每个batch的预测结果进行合并
             predict = None
-            if pyRecData_for_pre.get_seq() == 1:
+            if pyRecData_for_pre.get_idx() == 1:
                 predict = predict_part
             else:
                 predict = tf.concat(0, [predict, predict_part])
